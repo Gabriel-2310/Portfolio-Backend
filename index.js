@@ -1,8 +1,9 @@
-import app from "./src/App";
+const app = require('./src/App');
+const router  = app.default;
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000;
 
-app.listen(port, err => {
+router.listen(port, (err) => {
     if (err) {
       return console.error(err);
     }
