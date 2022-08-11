@@ -11,6 +11,6 @@ const DeleteByIdPerfil_1 = __importDefault(require("./controles/DeleteByIdPerfil
 const router = (0, express_1.Router)();
 router.get('/get', GetFinAllPerfil_1.default);
 router.post('/post', PostPerfil_1.default);
-router.put('/update', PutByIdPerfil_1.default);
-router.delete('/delete', DeleteByIdPerfil_1.default);
+router.put('/update/:id', PutByIdPerfil_1.default);
+router.delete('/delete/:id', DeleteByIdPerfil_1.default);
 exports.default = router;

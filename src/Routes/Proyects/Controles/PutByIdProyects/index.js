@@ -8,10 +8,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const putproyects = (_req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+const Proyects_1 = __importDefault(require("../../../../Models/Proyects"));
+const putproyects = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const { title, date, description, image, tecnology, social, creator } = req.body;
+    const { id } = req.params;
     try {
-        res.status(200).json("hola soy un put");
+        yield Proyects_1.default.findByIdAndUpdate((id), { title, date, description, image, tecnology, social, creator });
+        let updateproyect = yield Proyects_1.default.findById(id);
+        res.status(200).json(updateproyect);
     }
     catch (error) {
         next(error);

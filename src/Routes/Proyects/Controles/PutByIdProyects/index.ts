@@ -1,10 +1,15 @@
 import { NextFunction, Request, Response } from "express";
+import Proyect from "../../../../Models/Proyects";
 
 
-const putproyects = async(_req: Request, res: Response, next: NextFunction) => {
-    
+const putproyects = async(req: Request, res: Response, next: NextFunction) => {
+    const {title, date, description, image, tecnology, social, creator} = req.body;
+    const {id} = req.params;
+
     try { 
-        res.status(200).json("hola soy un put")
+        await Proyect.findByIdAndUpdate((id), {title, date, description, image, tecnology, social, creator});
+        let updateproyect = await Proyect.findById(id);
+        res.status(200).json(updateproyect)
     } catch (error) {
         next(error)
     }

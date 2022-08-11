@@ -1,12 +1,16 @@
 import { NextFunction, Request, Response } from "express";
+import Proyect from "../../../../Models/Proyects";
 
 
-const deleteproyects = async(_req: Request, res: Response, next: NextFunction) => {
-    
+const deleteproyects = async(req: Request, res: Response, next: NextFunction) => {
+    const {id} = req.params;
+
     try { 
-        res.status(200).json("hola soy delete")
+        const deleteproyect = await Proyect.findByIdAndDelete(id);
+        res.status(200).json(deleteproyect)
     } catch (error) {
         next(error)
     }
 }
+
 export default deleteproyects;

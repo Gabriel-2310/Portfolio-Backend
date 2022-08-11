@@ -21,7 +21,7 @@ const ProyectSchema = new Schema({
     tecnology: {
         type: [String],
     },
-    Social: {
+    social: {
         type: {
             github: String,
             deploy: String,
@@ -30,6 +30,7 @@ const ProyectSchema = new Schema({
     creator: {
         type: [{
                 name: String,
+                image: String,
                 profession: String,
                 contact: {
                     facebook: String,

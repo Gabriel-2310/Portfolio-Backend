@@ -8,10 +8,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const putperfil = (_req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+const Profile_1 = __importDefault(require("../../../../Models/Profile"));
+const putperfil = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const { name, profession, position, skill, info, about, Social, coments } = req.body;
+    const { id } = req.params;
     try {
-        res.status(200).json("hola soy un put de perfil");
+        yield Profile_1.default.findByIdAndUpdate((id), { name, profession, position, skill, info, about, Social, coments });
+        let updateprofile = yield Profile_1.default.findById(id);
+        res.status(200).json(updateprofile);
     }
     catch (error) {
         next(error);

@@ -8,7 +8,7 @@ const router = Router();
 
 router.get('/get', getperfil);
 router.post('/post', postperfil);
-router.put('/update', putperfil);
-router.delete('/delete', deleteperfil);
+router.put('/update/:id', putperfil);
+router.delete('/delete/:id', deleteperfil);
 
 export default router;

@@ -11,6 +11,6 @@ const GetFinAllProyects_1 = __importDefault(require("./Controles/GetFinAllProyec
 const router = (0, express_1.Router)();
 router.get('/get', GetFinAllProyects_1.default);
 router.post('/post', PostProyects_1.default);
-router.put('/update', PutByIdProyects_1.default);
-router.delete('/delete', DeleteByIdProyects_1.default);
+router.put('/update/:id', PutByIdProyects_1.default);
+router.delete('/delete/:id', DeleteByIdProyects_1.default);
 exports.default = router;

@@ -1,10 +1,14 @@
 import { NextFunction, Request, Response } from "express";
+import Proyect from "../../../../Models/Proyects";
 
 
-const postproyects = async(_req: Request, res: Response, next: NextFunction) => {
+const postproyects = async(req: Request, res: Response, next: NextFunction) => {
+    const {title, date, description, image, tecnology, social, creator} = req.body;
     
     try { 
-        res.status(200).json("hola soy post")
+        let newproyect = new Proyect({title, date, description, image, tecnology, social, creator});
+        newproyect = await newproyect.save(); 
+        res.status(201).json(newproyect)
     } catch (error) {
         next(error)
     }

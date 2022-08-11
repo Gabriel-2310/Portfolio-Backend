@@ -42,6 +42,6 @@ const ProfileSchema = new Schema({
     }
 });
 
-const Profile = moongose.model('Proyect', ProfileSchema);
+const Profile = moongose.model('Profile', ProfileSchema);
 
 export default Profile;

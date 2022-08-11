@@ -8,7 +8,7 @@ const router = Router();
 
 router.get('/get', getproyects);
 router.post('/post', postproyects);
-router.put('/update', putproyects);
-router.delete('/delete', deleteproyects);
+router.put('/update/:id', putproyects);
+router.delete('/delete/:id', deleteproyects);
 
 export default router;

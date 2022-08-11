@@ -1,12 +1,17 @@
 import { NextFunction, Request, Response } from "express";
+import Profile from "../../../../Models/Profile";
 
 
-const postperfil = async(_req: Request, res: Response, next: NextFunction) => {
+const postperfil = async(req: Request, res: Response, next: NextFunction) => {
+    const { name, profession, position, skill, info, about, Social, coments } = req.body;
     
     try { 
-        res.status(200).json("hola soy post de perfil")
+        let newprofile = new Profile({ name, profession, position, skill, info, about, Social, coments });
+        newprofile = await newprofile.save(); 
+        res.status(201).json(newprofile)
     } catch (error) {
         next(error)
     }
 }
+
 export default postperfil;

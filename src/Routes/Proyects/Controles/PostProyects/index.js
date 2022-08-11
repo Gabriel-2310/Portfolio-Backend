@@ -8,10 +8,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const postproyects = (_req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+const Proyects_1 = __importDefault(require("../../../../Models/Proyects"));
+const postproyects = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const { title, date, description, image, tecnology, social, creator } = req.body;
     try {
-        res.status(200).json("hola soy post");
+        let newproyect = new Proyects_1.default({ title, date, description, image, tecnology, social, creator });
+        newproyect = yield newproyect.save();
+        res.status(201).json(newproyect);
     }
     catch (error) {
         next(error);

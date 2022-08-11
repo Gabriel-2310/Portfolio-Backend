@@ -44,5 +44,5 @@ const ProfileSchema = new Schema({
         }
     }
 });
-const Profile = mongoose_1.default.model('Proyect', ProfileSchema);
+const Profile = mongoose_1.default.model('Profile', ProfileSchema);
 exports.default = Profile;
