@@ -8,7 +8,7 @@ const DeleteByIdProyects_1 = __importDefault(require("./Controles/DeleteByIdProy
 const PutByIdProyects_1 = __importDefault(require("./Controles/PutByIdProyects"));
 const PostProyects_1 = __importDefault(require("./Controles/PostProyects"));
 const GetFinAllProyects_1 = __importDefault(require("./Controles/GetFinAllProyects"));
-const router = express_1.Router();
+const router = (0, express_1.Router)();
 router.get('/get', GetFinAllProyects_1.default);
 router.post('/post', PostProyects_1.default);
 router.put('/update', PutByIdProyects_1.default);

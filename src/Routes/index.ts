@@ -5,6 +5,6 @@ import Perfil from './Perfil/index';
 const router = Router();
 
 router.use('/proyects', Proyects);
-router.use('/perfil', Perfil);
+router.use('/profile', Perfil);
 
 export default router;

@@ -8,7 +8,7 @@ const GetFinAllPerfil_1 = __importDefault(require("./controles/GetFinAllPerfil")
 const PostPerfil_1 = __importDefault(require("./controles/PostPerfil"));
 const PutByIdPerfil_1 = __importDefault(require("./controles/PutByIdPerfil"));
 const DeleteByIdPerfil_1 = __importDefault(require("./controles/DeleteByIdPerfil"));
-const router = express_1.Router();
+const router = (0, express_1.Router)();
 router.get('/get', GetFinAllPerfil_1.default);
 router.post('/post', PostPerfil_1.default);
 router.put('/update', PutByIdPerfil_1.default);
