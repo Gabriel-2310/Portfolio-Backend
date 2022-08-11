@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import router from './Routes/index';
 import ErrorControl from "./Middlewares/Errores";
+import "./Config/MongoDB/index";
 
 const app = express();
 
